@@ -1,0 +1,16 @@
+
+{%block content%}
+<h1>Retrieve Products</h1>
+<table border="1">
+    <tr><th>Product_id</th>
+        <th>Product_name</th>
+        <th>Product_price</th></tr>
+        {%for products in product_list%}
+    <tr>
+    <td>{{products.id}}</td>
+    <td>{{ products.name }} </td> 
+    <td>{{ products.price }}</td></tr>
+     {% endfor %}
+    </table> 
+
+{%endblock%}

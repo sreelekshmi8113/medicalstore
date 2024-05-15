@@ -1,0 +1,52 @@
+#home{
+    background-image: url("home2.jpg");
+    background-size: cover; /* or background-size: contain; */
+    width: 100%;
+}
+#create{
+    background-image: url("create2.jpg");
+    background-size: cover; /* or background-size: contain; */
+    width: 100%;
+}
+#delete{
+    background-image: url("img3.jpg");
+    background-size: cover; /* or background-size: contain; */
+    width: 100%;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    margin-top: 5px;
+   
+    
+}
+#update{
+    background-image: url("home2.jpg");
+    background-size: cover; /* or background-size: contain; */
+    width: 100%;
+}
+/* .center{
+    margin: auto;
+  width: 50%;
+  text-align: center;
+}
+#form{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+} */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 30%;
+    padding: 2px;
+    margin: auto;
+    /* This ensures that the container is centered vertically */
+}
+
+#form {
+    width: 50%; /* Adjust the width of the form container as needed */
+}

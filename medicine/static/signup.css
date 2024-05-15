@@ -1,0 +1,10 @@
+body{
+    background-image: url("signup.jpg");
+    background-size: cover; /* or background-size: contain; */
+    width: 100%;
+}
+h1{
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}

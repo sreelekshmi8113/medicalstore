@@ -1,0 +1,24 @@
+{% extends 'layout/signup-layout.html' %}
+
+{% block content %}
+<div class="container mt-5 w-50" >  
+  <h1 class="mt-5 text-white font-weight-bold" style=" text-shadow: 2px 2px 4px #000000;"> Sign Up</h1>
+ <form method="post" class="form-group w-50 bg-white  p-5 m-auto " style="text-align: center; box-shadow: 2px 2px  4px #989191; " >
+    {% csrf_token %}
+   <div class="p-2 ">
+    {{form.username.label}}
+    {{form.username}}</div>
+    <div class="p-2">
+      {{form.password1.label}}
+    {{form.password1}}</div>
+    <div class="p-2">
+      {{form.password2.label}}
+    {{form.password2}}</div>
+    <button type="submit"   class="btn btn-warning mt-3 px-5 font-weight-bold text-white">Sign Up</button>
+  </form>
+</div>
+  <div id="have">
+    <p style="text-align: center;">Already Have an account | <a href="{%url 'login' %}" >Login</a></p>
+    </div>
+    
+{% endblock %}

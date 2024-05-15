@@ -1,0 +1,71 @@
+{%extends 'layout/app-layout.html'%}
+{%block content%}
+<body id="home">
+<div class="row">
+    <div class="col col-xl-2" ></div>
+    <div class="col col-xl-8" >
+<h1 class="mt-2" style=" text-shadow: 2px 2px 4px #000000;" >Medicine List</h1>
+<div class="row " >
+  <div class="col-6">
+    <a href="{%url 'addproduct' %}" id="addbtn">
+        <input type="submit" value="Add Medicine" name="add"  id="addbtn" class="btn btn-success p-2">
+    </a></div>
+    <div class="col-6">
+    <form action="{% url 'search' %}" method="get" class="pt-3 float-right" >
+     {% csrf_token %}
+        <div style="display: grid; grid-template-columns: auto auto;">
+            <input type="search" name="q" placeholder="Search" style="border: none; border-radius: 2px;">
+            <button type="submit" class="btn btn-success">search</button>
+        </div>
+    </form></div>
+</div>
+
+<div class="container bg-white ">
+<table  class="table table-striped mt-3">
+    <tr>
+        <th>Medicine name</th>
+        <th>Medicine Category</th>
+        <th>Medicine price</th>
+        <th colspan="2">Actions</th></tr>
+        
+    {%for products in product_list%}
+    <tr >    
+    <td>{{ products.name }} </td> 
+    <td>{{ products.category }} </td> 
+    <td>{{ products.price }}</td>
+    <td ><a href="{%url 'updateproduct' products.id %}" class="btn btn-success" value="edit" type="submit">Edit</a>
+    <a class="btn btn-danger " data-toggle="modal" value="edit" type="submit" data-target="#myModal">Delete</a></td></tr>  
+    {% endfor %}     
+    </table>
+</div>
+{% for product in product_list %}
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure you want to delete?
+        </div>        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <form action="{% url 'deleteproduct' product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Confirm</button>
+            </form>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="cancel">cancel</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="col col-xl-2" ></div>
+</div>
+</body>
+{%endblock%}

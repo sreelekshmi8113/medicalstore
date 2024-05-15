@@ -1,0 +1,16 @@
+{%extends 'layout/app-layout.html'%}
+{%block content%}
+<body id="delete">
+
+<div class="center mt-5" style="height: 200px;">
+
+
+<form method="post" action="">
+    {% csrf_token %}
+    <p>Are you sure you want to delete ?</p>
+    <input type="submit" value="Confirm" class="btn-warning">
+</form>
+</div>
+
+</body>
+{% endblock %}

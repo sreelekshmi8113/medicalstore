@@ -1,0 +1,17 @@
+{%extends 'layout/app-layout.html'%}
+{% block content %}
+<body id="update">
+    <h1 style=" text-shadow: 2px 2px 4px #000000;" class="mt-5" >Update Product</h1>  
+    <div class="center mt-5" >
+        <div id="form" >
+        <form method="POST" action="">
+            <div class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-warning text-white font-weight-bold w-75" value="update" type="submit">Update</button>
+        </form>
+    </div>
+    </div>
+    </body>
+{% endblock %}
+
